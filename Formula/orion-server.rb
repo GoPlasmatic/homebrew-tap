@@ -5,21 +5,21 @@ class OrionServer < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.0/orion-server-aarch64-apple-darwin.tar.xz"
-      sha256 "a62bb35c3b83ef93d81de82fa141ffda3156c2576cef4510a0ddf40e29ec2c7b"
+      sha256 "e2e3b0315c50f0378281d0b7296c087e5f5c855396ff04740f4feed0a72803af"
     end
     if Hardware::CPU.intel?
       url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.0/orion-server-x86_64-apple-darwin.tar.xz"
-      sha256 "65da430d1c7eb06fcf0922dccdb533610716a2457ab862c209829a7e860686b1"
+      sha256 "9b640fabe85cedc8941ee71c9213c5cc6fa18778e6e5f3129a6fd3d6905f3a9f"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.0/orion-server-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "c9758ca999aa7cd76ed6858b1035e3acd9d239a093a7fe9fd13d5c66abcd1bcc"
+      sha256 "86297581769013f9a2fee8f21e2214ece91fe0619510037117e59ce9e01d618f"
     end
     if Hardware::CPU.intel?
       url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.0/orion-server-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "322a82e19182b4f41b4ba5a88f96f5634a9faaa110e5fedb071ae1ce69f86241"
+      sha256 "ada1d35db81a32b143fef85bc3d7aa8f10bd7c0b04f65691399eb1dc427fd10e"
     end
   end
   license "Apache-2.0"
