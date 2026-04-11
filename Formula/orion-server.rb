@@ -1,25 +1,19 @@
 class OrionServer < Formula
   desc "Declarative services runtime powered by dataflow-rs"
   homepage "https://github.com/GoPlasmatic/Orion"
-  version "0.1.0"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.0/orion-server-aarch64-apple-darwin.tar.xz"
-      sha256 "e2e3b0315c50f0378281d0b7296c087e5f5c855396ff04740f4feed0a72803af"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.0/orion-server-x86_64-apple-darwin.tar.xz"
-      sha256 "9b640fabe85cedc8941ee71c9213c5cc6fa18778e6e5f3129a6fd3d6905f3a9f"
-    end
+  version "0.1.1"
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.1/orion-server-aarch64-apple-darwin.tar.xz"
+    sha256 "5818aea1e0c41ed40e17ca9a0b6f1b6265b6a929766fcce01b28756be64cb5d4"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.0/orion-server-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "86297581769013f9a2fee8f21e2214ece91fe0619510037117e59ce9e01d618f"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.1/orion-server-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "5965414b7249f5d0b81de9855f3b5a74b489be4f6452bbc6c6039fb93c5b1c64"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.0/orion-server-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ada1d35db81a32b143fef85bc3d7aa8f10bd7c0b04f65691399eb1dc427fd10e"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.1/orion-server-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e632faf74aa8c5adc8118c8835e11a1a611bfb813a08d88621dd87d96fe1690c"
     end
   end
   license "Apache-2.0"
@@ -27,7 +21,6 @@ class OrionServer < Formula
   BINARY_ALIASES = {
     "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
     "x86_64-pc-windows-gnu":     {},
     "x86_64-unknown-linux-gnu":  {},
   }.freeze
@@ -49,7 +42,6 @@ class OrionServer < Formula
 
   def install
     bin.install "orion-server" if OS.mac? && Hardware::CPU.arm?
-    bin.install "orion-server" if OS.mac? && Hardware::CPU.intel?
     bin.install "orion-server" if OS.linux? && Hardware::CPU.arm?
     bin.install "orion-server" if OS.linux? && Hardware::CPU.intel?
 
