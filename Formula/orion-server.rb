@@ -1,19 +1,19 @@
 class OrionServer < Formula
   desc "Declarative services runtime powered by dataflow-rs"
   homepage "https://github.com/GoPlasmatic/Orion"
-  version "0.1.1"
+  version "0.2.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.1/orion-server-aarch64-apple-darwin.tar.xz"
-    sha256 "5818aea1e0c41ed40e17ca9a0b6f1b6265b6a929766fcce01b28756be64cb5d4"
+    url "https://github.com/GoPlasmatic/Orion/releases/download/v0.2.0/orion-server-aarch64-apple-darwin.tar.xz"
+    sha256 "8a4111deb8eb25c1e75c472396f94ee1e9e6f3ac1d36de5aebe7c4512f556791"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.1/orion-server-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "5965414b7249f5d0b81de9855f3b5a74b489be4f6452bbc6c6039fb93c5b1c64"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.2.0/orion-server-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "20e3e57809120462ccba6d2f6ebc66f27c0545563f13b82a25c85fc4aa9812c1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.1.1/orion-server-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e632faf74aa8c5adc8118c8835e11a1a611bfb813a08d88621dd87d96fe1690c"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.2.0/orion-server-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "4ddef7db514f7feda0f4f761ba5b014f910b9b790c3c141c2c5f83b03b7fe67c"
     end
   end
   license "Apache-2.0"
