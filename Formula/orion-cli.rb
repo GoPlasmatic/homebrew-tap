@@ -1,25 +1,25 @@
 class OrionCli < Formula
-  desc "CLI tool for the Orion services runtime"
+  desc "CLI and MCP server for the Orion declarative services runtime — manage workflows, channels, connectors, data, and traces from the terminal or an AI client"
   homepage "https://github.com/GoPlasmatic/Orion-cli"
-  version "0.2.0"
+  version "0.2.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.0/orion-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "9ce57784a0e51ed2add486a00c6e9a194b904ba0913fcc431a5050ad6f054112"
+      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.1/orion-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "4b7ea5f145044ecea1ffe6e378e2f73dd19ec695fa5b82fd8a2b552c57a89369"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.0/orion-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "3169716be8457c54390b872a8bef526bf22b65eb68ddb6513cbd152907d1da7c"
+      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.1/orion-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "984ec833b82f1d46dfd0ebc6004baa33e64501b2dc7bc991004f36e215ef250e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.0/orion-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e66d5dce956c899ad05ee12ac3e99afa4413224657e1bde25968145667663e25"
+      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.1/orion-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8d7e0980c184a7519cc2b1b01945004a7d90b97c62aef696507ad662e20dcb43"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.0/orion-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "3588a39de3202de8a3cdcb7528e36131441f3927df8d5d93b5ce8ec46ab98f69"
+      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.1/orion-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "399cc2cea906bb4fec7fceb4fd70d422a03242b6af7a95bafa6e766cb624c1a6"
     end
   end
   license "Apache-2.0"
