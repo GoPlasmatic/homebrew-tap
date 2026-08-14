@@ -1,19 +1,19 @@
 class OrionServer < Formula
-  desc "Declarative services runtime — deploy governed REST/Kafka services as JSON workflows, with rate limiting, circuit breakers, versioning, and observability built in"
+  desc "Turn business logic into live REST/Kafka services. Declare workflows as JSON and Orion runs them, with rate limiting, circuit breakers, versioning, and observability built in"
   homepage "https://goplasmatic.io/orion"
-  version "0.3.0"
+  version "1.0.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/GoPlasmatic/Orion/releases/download/v0.3.0/orion-server-aarch64-apple-darwin.tar.xz"
-    sha256 "a39c2307ab39f9b42edb00757e1ac1aaa57ff5b3679f607099d90bf2026dc70c"
+    url "https://github.com/GoPlasmatic/Orion/releases/download/v1.0.0/orion-server-aarch64-apple-darwin.tar.xz"
+    sha256 "0a687c500cef660545a815f8686458f5b31753613880cafc3f9c0bef1bafeb43"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.3.0/orion-server-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2f35bf163e4913fe9f9747355303eee03694686e01f9c8502890a38f96c2e249"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.0.0/orion-server-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "538a3765a8952aa6337153ed6490989b7f07f737422173ee0ff63df48fc2b470"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v0.3.0/orion-server-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "327dba25ac952f4a1ca5413e32ed295b460ad777e258e8d853942152be722583"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.0.0/orion-server-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "03ff088b8af8688c189a505d18c666aa593e15bb64382b17fec6932b0b2724c2"
     end
   end
   license "Apache-2.0"
@@ -41,9 +41,15 @@ class OrionServer < Formula
   end
 
   def install
-    bin.install "orion-server" if OS.mac? && Hardware::CPU.arm?
-    bin.install "orion-server" if OS.linux? && Hardware::CPU.arm?
-    bin.install "orion-server" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "orion-server"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "orion-server"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "orion-server"
+    end
 
     install_binary_aliases!
 
