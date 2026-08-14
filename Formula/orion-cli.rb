@@ -1,25 +1,19 @@
 class OrionCli < Formula
   desc "CLI and MCP server for the Orion declarative services runtime — manage workflows, channels, connectors, data, and traces from the terminal or an AI client"
-  homepage "https://github.com/GoPlasmatic/Orion-cli"
-  version "0.2.1"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.1/orion-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "4b7ea5f145044ecea1ffe6e378e2f73dd19ec695fa5b82fd8a2b552c57a89369"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.1/orion-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "984ec833b82f1d46dfd0ebc6004baa33e64501b2dc7bc991004f36e215ef250e"
-    end
+  homepage "https://docs.goplasmatic.io/"
+  version "1.0.0"
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/GoPlasmatic/Orion/releases/download/v1.0.0/orion-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "4945dc858f9b75190326f405e4f3622f1cc784f92577e6dbe112c42aeddf3adb"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.1/orion-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "8d7e0980c184a7519cc2b1b01945004a7d90b97c62aef696507ad662e20dcb43"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.0.0/orion-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "be8815f5a8ab396e03a87f8b7179ba557f61b2c70ff8e33c0ae473eac93f12b2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion-cli/releases/download/v0.2.1/orion-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "399cc2cea906bb4fec7fceb4fd70d422a03242b6af7a95bafa6e766cb624c1a6"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.0.0/orion-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c86bfe65ce6527dd585fad8639acf4affac3541703a1065ba72750be3f518351"
     end
   end
   license "Apache-2.0"
@@ -27,7 +21,6 @@ class OrionCli < Formula
   BINARY_ALIASES = {
     "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
     "x86_64-pc-windows-gnu":     {},
     "x86_64-unknown-linux-gnu":  {},
   }.freeze
@@ -48,10 +41,15 @@ class OrionCli < Formula
   end
 
   def install
-    bin.install "orion-cli" if OS.mac? && Hardware::CPU.arm?
-    bin.install "orion-cli" if OS.mac? && Hardware::CPU.intel?
-    bin.install "orion-cli" if OS.linux? && Hardware::CPU.arm?
-    bin.install "orion-cli" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "orion-cli"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "orion-cli"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "orion-cli"
+    end
 
     install_binary_aliases!
 
