@@ -1,19 +1,19 @@
 class OrionCli < Formula
   desc "Command-line client for the Orion declarative services runtime"
   homepage "https://docs.goplasmatic.io/"
-  version "1.5.0"
+  version "1.5.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/GoPlasmatic/Orion/releases/download/v1.5.0/orion-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "aa9d953bfd6b79914876bd00b0bda68dcfb9402de4953e5b6b2c6b459d96e8f4"
+    url "https://github.com/GoPlasmatic/Orion/releases/download/v1.5.1/orion-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "432bc4c404d71b0175a17171457dcb829805f01fe7aeae5bb12a11431139e8d4"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.5.0/orion-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ae4c2e5f117b0cfa125b6d0f8a17c928f742ff0011dfcccf0e53018942a384e2"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.5.1/orion-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a0ee961eed2bc1dd56293c3182d4274773923a779a3e7b142f1a39169cb005ea"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.5.0/orion-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "63c563e422a484b39b510b5fe285ffbf9886be370815869db9050b4fc28e4b09"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.5.1/orion-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e794ac59a3479956da779a761364545c268fd8639ff6866c929cb8e27946c76e"
     end
   end
   license "Apache-2.0"
