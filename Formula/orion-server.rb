@@ -1,19 +1,19 @@
 class OrionServer < Formula
   desc "Turn business logic into live REST/Kafka services, declared as JSON"
   homepage "https://goplasmatic.io/orion"
-  version "1.8.1"
+  version "1.8.2"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/GoPlasmatic/Orion/releases/download/v1.8.1/orion-server-aarch64-apple-darwin.tar.xz"
-    sha256 "dd80f534c872ca3a44b8d91724a18a8e9a0d8e8475eeaf8c724f8c03cfd51463"
+    url "https://github.com/GoPlasmatic/Orion/releases/download/v1.8.2/orion-server-aarch64-apple-darwin.tar.xz"
+    sha256 "9e9baa9e44d8a43132621e8779286efe3a4255916a28891471fd2b44536b5044"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.8.1/orion-server-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2d3ad0fbb051e592f2b6b25cc0753aed5afc9cbc9719d054e990c35d5cb63b00"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.8.2/orion-server-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c92dbf25fecd5fd2e6e3f30ff49cd34da733deb32dcbfc4a017309383373fff4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.8.1/orion-server-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "286145fa094aafec960c1a9f1e48a9c139c8742585184d108803050640434cb4"
+      url "https://github.com/GoPlasmatic/Orion/releases/download/v1.8.2/orion-server-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "666385a7dc53d2f9eb0e7b0ea71b3b9a4fa3d00fdc5edbdbac241534cab59261"
     end
   end
   license "Apache-2.0"
